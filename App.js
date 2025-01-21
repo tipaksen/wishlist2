@@ -1,12 +1,12 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack'; // Правильный импорт
+import { createNativeStackNavigator } from '@react-navigation/native-stack'; 
 import AddWish, { UserProvider } from './AddWish';
 import DetailsScreen from './DetailsScreen';
 import HomeScreen from './HomeScreen';
 import 'react-native-gesture-handler';
 
-const Stack = createNativeStackNavigator(); // Используем createNativeStackNavigator
+const Stack = createNativeStackNavigator(); 
 
 export default function App() {
   return (

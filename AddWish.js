@@ -1,14 +1,7 @@
 import React, { createContext, useState } from 'react';
-import {
-  View,
-  TextInput,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  Alert,
-} from 'react-native';
-import * as ImagePicker from 'expo-image-picker'; // Подключение ImagePicker из expo
-import Icon from 'react-native-vector-icons/FontAwesome'; // Подключение Icon из react-native-vector-icons
+import {View,TextInput,StyleSheet,Text,TouchableOpacity,Alert,} from 'react-native';
+import * as ImagePicker from 'expo-image-picker'; 
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 // Создаём контекст
 export const UserContext = createContext();
@@ -22,15 +15,10 @@ export const UserProvider = ({ children }) => {
 
   return (
     <UserContext.Provider
-      value={{
-        link,
-        setLink,
-        name,
-        setName,
-        descr,
-        setDescr,
-        price,
-        setPrice,
+      value={{link,setLink,
+        name,setName,
+        descr,setDescr,
+        price,setPrice,
       }}
     >
       {children}
@@ -38,13 +26,12 @@ export const UserProvider = ({ children }) => {
   );
 };
 
-// AddWish Component
 export default function AddWish({ navigation }) {
   const { link, setLink, name, setName, descr, setDescr, price, setPrice } =
     React.useContext(UserContext);
 
-  const [imageUri, setImageUri] = useState(null); // Хук для хранения URI изображения
-  const [loading, setLoading] = useState(false); // Хук для отображения состояния загрузки
+  const [imageUri, setImageUri] = useState(null); 
+  const [loading, setLoading] = useState(false); 
 
   // Обработка результата выбора или снимка изображения
   const handleResponse = (response) => {
@@ -59,12 +46,11 @@ export default function AddWish({ navigation }) {
   };
 
   // Выбор изображения из галереи
-  // Выбор изображения из галереи
 const selectImage = async () => {
   setLoading(true);
   try {
     const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaType.IMAGE, // Используем MediaType вместо MediaTypeOptions
+      mediaTypes: ImagePicker.MediaType.IMAGE, 
       quality: 1,
     });
     handleResponse(result);
@@ -85,7 +71,7 @@ const takePhoto = async () => {
   setLoading(true);
   try {
     const result = await ImagePicker.launchCameraAsync({
-      mediaTypes: ImagePicker.MediaType.IMAGE, // Используем MediaType вместо MediaTypeOptions
+      mediaTypes: ImagePicker.MediaType.IMAGE, 
       quality: 1,
       aspect: [4, 3],
     });
@@ -123,6 +109,8 @@ const takePhoto = async () => {
         placeholder="Price | tg"
         keyboardType="numeric"
       />
+
+
       <TouchableOpacity style={styles.cameraButton} onPress={selectImage}>
         <Icon name="image" size={25} color="white" />
         <Text style={styles.buttonText}>Select Image</Text>
@@ -131,12 +119,14 @@ const takePhoto = async () => {
         <Icon name="camera" size={25} color="white" />
         <Text style={styles.buttonText}>Take Photo</Text>
       </TouchableOpacity>
+
       <TouchableOpacity
         style={styles.submitButton}
         onPress={() => navigation.navigate('DetailsScreen')}
       >
         <Text style={styles.submitButtonText}>Add Wish</Text>
       </TouchableOpacity>
+      
       <TouchableOpacity
         style={styles.exitButton}
         onPress={() => navigation.goBack()}

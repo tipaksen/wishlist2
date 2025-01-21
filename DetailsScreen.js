@@ -4,17 +4,15 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 export default function DetailsScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      {/* Изображение сверху */}
       <View style={styles.imageContainer}>
         <Image
-          source={require('./assets/circle.png')} // Путь к локальному изображению
+          source={require('./assets/circle.png')} 
           style={styles.image}
         />
         <Text style={styles.text}> Xeniya</Text >
     <Text style={styles.text2}>Here will be your wishes!</Text>
       </View>
 
-      {/* Кнопка внизу */}
       <View style={styles.buttonContainer}>
         <TouchableOpacity
           style={styles.button}
@@ -29,36 +27,36 @@ export default function DetailsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // Занимает весь экран
-    justifyContent: 'space-between', // Распределяет элементы сверху и снизу
+    flex: 1, 
+    justifyContent: 'space-between', 
   },
   imageContainer: {
-    alignItems: 'center', // Центрирует изображение по горизонтали
-    marginTop: 20, // Отступ сверху
+    alignItems: 'center', 
+    marginTop: 20, 
   },
   image: {
     width: 130,
     height: 130,
   },
   buttonContainer: {
-    alignItems: 'center', // Центрирует кнопку по горизонтали
-    marginBottom: 30, // Отступ от нижнего края
+    alignItems: 'center',
+    marginBottom: 30, 
   },
   button: {
-    backgroundColor: '#1E90FF', // Синий цвет кнопки
-    width: 140, // Ширина кнопки
-    height: 70, // Высота кнопки
+    backgroundColor: '#1E90FF', 
+    width: 140,
+    height: 70, 
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 50, // Округление кнопки
-    shadowColor: '#000', // Тень кнопки
+    borderRadius: 50, 
+    shadowColor: '#000', 
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 3,
   },
   plus: {
-    fontSize: 40, // Размер плюса
-    color: '#fff', // Белый цвет
+    fontSize: 40, 
+    color: '#fff', 
   },
   text2: {
     justifyContent: 'center',

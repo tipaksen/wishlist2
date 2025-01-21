@@ -8,7 +8,7 @@ export default function HomeScreen({ navigation }) {
       <TouchableOpacity onPress={() => navigation.navigate('DetailsScreen')}>
         <View style={styles.imageContainer}>
           <Image
-            source={require('./assets/newyear.jpg')} // Путь к локальному изображению
+            source={require('./assets/newyear.jpg')} 
             style={styles.image}
           />
           <Text style={styles.text}>Welcome to WishList!</Text>
@@ -27,31 +27,31 @@ export default function HomeScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   imageContainer: {
-    position: 'relative', // Для правильного позиционирования текста поверх изображения
+    position: 'relative', 
     width: 400,
     height: 750,
   },
   image: {
     width: '107%',
     height: '107%',
-    resizeMode: 'cover', // Чтобы картинка не искажалась
+    resizeMode: 'cover', 
   },
   text: {
     position: 'absolute',
-    top: '45%', // Позиционируем текст по вертикали
-    left: '50%', // Позиционируем текст по горизонтали
-    transform: [{ translateX: -140 }, { translateY: -70 }], // Центрируем текст
-    color: 'white', // Цвет текста
-    fontSize: 50, // Размер шрифта
-    fontWeight: 'bold', // Жирный шрифт
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)', 
+    color: 'white', 
+    fontSize: 50, 
+    fontWeight: 'bold', 
     textShadowColor: '#000',
     textShadowOffset: { width: 3, height: 3 },
     textShadowRadius: 4,
   },
   smallText: {
     position: 'absolute',
-    top: '80%', // Позиционируем текст по вертикали
-    left: '25%', // Позиционируем текст по горизонтали
+    top: '80%', 
+    left: '25%', 
     fontSize: 20,
     textShadowRadius: 4,
     textShadowOffset: { width: 3, height: 3},
